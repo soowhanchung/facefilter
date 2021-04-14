@@ -46,14 +46,13 @@
       	</div>
 
       	<div class="row"><h3>Abstract</h3>
-		<img src="./fig1_main.png" style="max-width:100%;padding-right:20px;" align="center">
 		<p style="text-align: justify;">
 		The objective of this paper is to separate a target speaker's speech from a mixture of two speakers using a deep audio-visual speech separation network. Unlike previous works that used lip movement on video clips or pre-enrolled speaker information as an auxiliary conditional feature, we use a single face image of the target speaker. In this task, the conditional feature is obtained from facial appearance in cross-modal biometric task, where audio and visual identity representations are shared in latent space. Learnt identities from facial images enforce the network to isolate matched speakers and extract the voices from mixed speech. It solves the permutation problem caused by swapped channel outputs, frequently occurred in speech separation tasks. The proposed method is far more practical than video-based speech separation since user profile images are readily available on many platforms. Also, unlike speaker-aware separation methods, it is applicable on separation with unseen speakers who have never been enrolled before. We show strong qualitative and quantitative results on challenging real-world examples.
 		</p>  
       	</div>
       	<div class="row"><h3>Network Configuration</h3>
 		<p style="text-align: justify;">
-		<img src="./fig_block.PNG" style="max-width:100%;" align="center">
+		<img src="./fig_block.png" style="max-width:100%;" align="center">
 		Description of the proposed audio-visual speech separation network. \textcolor{blue}{Blue} blocks are trainable neural networks whereas the \textcolor{red}{red} blocks are networks pre-trained in cross-modal biometric task.
 		It consists of three sub-stages such as speech/image encoding stage, audio-visual fusion stage, and speech separation stage.
 		<br><br>
