@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Looking into Your Speech: Learning Cross-modal Affinity for Audio-visual Speech Separation</title>
+	<meta name="author" content="CaffNet">
+
+	<link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <div style="font-size: 10px">
+        <h1> <center> Looking into Your Speech: &#10; Learning Cross-modal Affinity for Audio-visual Speech Separation </center> </h1>
+        <h4 style="color: #517CB9; font-size: 30px"> 
+		<center> 
+			<a href="http://cvpr2021.thecvf.com/"> <img src="./CVPR_2021_HomePage_wide.jpg" style="max-width:100%"></a> 
+		</center>
+	</h4>
+        </div>
+      </div>
+
+      <h3><center>
+      <iframe width="100%" height="512" src="https://www.youtube.com/embed/9R2qQ7dGTp8" allowfullscreen></iframe>
+      </center></h3>
+
+      <div class="row">
+      	<h3>Authors</h3>
+      	<div style="font-size: 16px">
+      	<ul>
+		<li><a href="https://easy00.github.io">Jiyoung Lee</a><span style="text-transform:uppercase">&#10034;</span>, <i>Yonsei University</i></li>
+		<li><a href="https://soowhanchung.github.io/">Soo-Whan Chung</a><span style="text-transform:uppercase">&#10034;</span>, <i>Yonsei University, Naver Corporation</i></li>
+		<li>Sunok Kim, <i>Korea Aerospace University</i></li>
+		<li><a href="http://dsp.yonsei.ac.kr/">Hong-Goo Kang</a><span style="text-transform:uppercase">&#9841;</span>, <i>Yonsei University</i></li>
+		<li><a href="https://diml.yonsei.ac.kr/">Kwanghoon Sohn</a><span style="text-transform:uppercase">&#9841;</span>, <i>Yonsei University</i></li>
+      	</ul>
+      	</div>
+      	<p style="text-align: justify;">&#10034; equal contribution</p>
+      	<p style="text-align: justify;">&#9841; co-corresponding authors</p>    
+
+      	</div>
+
+      	<div class="row"><h3>Abstract</h3>
+		<img src="./fig1_main.png" style="max-width:100%;padding-right:20px;" align="center">
+		<p style="text-align: justify;">
+		In this paper, we address the problem of separating individual speech signals from videos using audio-visual neural processing. Most conventional approaches utilize frame-wise matching criteria to extract shared information between co-occurring audio and video. Thus, their performance heavily depends on the accuracy of audio-visual synchronization and the effectiveness of their representations. To overcome the frame discontinuity problem between two modalities due to transmission delay mismatch or jitter, we propose a cross-modal affinity network (CaffNet) that learns global correspondence as well as locally-varying affinities between audio and visual streams. Given that the global term provides stability over a temporal sequence at the utterance-level, this resolves the label permutation problem characterized by inconsistent assignments. By extending the proposed cross-modal affinity on the complex network, we further improve the separation performance in the complex spectral domain. Experimental results verify that the proposed methods outperform conventional ones on various datasets, demonstrating their advantages in real-world scenarios.
+		</p>  
+      	</div>
+      	<div class="row"><h3>Network Configuration</h3>
+		<p style="text-align: justify;">
+		<img src="./fig_network.PNG" style="max-width:100%;" align="center">
+		Overall network configuration: (1) encoding individual audio and visual features; (2) learning cross-modal affinity; (3) predicting spectrogram soft mask $\mathbf{M}$ to reconstruct target speech $\mathbf{\hat{Y}}$. Red dotted region means the magnitude operation processing.
+		<br><br>
+		<div class="row">
+			<p style="text-align:center;">
+				<img class="center" src="./fig_caffnet.PNG" style="max-width:50%;padding-left:10px;padding-right:10px;" align="center"><br>
+			</p>
+			It illustrates the detail of the red-dotted block of overall network. It takes speech feature $\mathbf{\bar{S}}$ and video feature $\mathbf{\bar{V}}$ to calculate the affinity matrix $\mathbf{A}$ that serves to transfer the visual features aligned to audio features. The cross-modal identity matrix $\mathbf{\Gamma}$ regularizes the initially obtained affinity matrix to maintain global correspondence.
+			<br><br>
+			<p style="text-align:center;">
+			<img class="center" src="./fig_pattern.PNG" style="max-width:50%;padding-left:10px;padding-right:10px;">
+			</p>
+			Intuitively, when input speech contains only one voice, affinity matrix in (a) is obtained by matching a target face and speech in CaffNet. In practice, when input speech is mixture sound, initial affinity is calculated as shown in (b) containing erroneous matching results. Final affinity in (c) is estimated with the help of affinity regularization.
+		</div>
+        <br>
+	</p>
+	</div>
+	<div class="row"><h3>Demo Samples</h3>
+		<img src="./fig_spectrogram.PNG" style="max-width:100%;padding-right:20px;" align="center">
+		Qualitative comparison results of spectrogram estimated by V-Conv [4] and CaffNet on LRS3 dataset. All results are reconstructed from the combination of estimated magnitude and ground-truth phase.
+      	</div>
+
+      <div class="row">
+        <h3>Paper</h3>
+	<p>
+     </p><table>
+  <tbody><tr></tr>
+  <tr><td>
+<!--     <a href="/"><img style="box-shadow: 5px 5px 2px #888888; margin: 10px" src="./thb.png" width="150px"></a> -->
+	<i class="fa fa-pencil-square" aria-hidden="true"></i>
+  </td>
+  <td></td>
+  <td>
+    J. Lee*, S.-W. Chung*, S. Kim, H.-G. Kang, K. Sohn<br>
+    <b>Looking into Your Speech: Learning Cross-modal Affinity for Audio-visual Speech Separation</b> <br>
+    [<a href="https://arxiv.org/pdf/2104.02775.pdf">Paper</a>] [<a href="/">Code</a>]
+</td></tr></tbody></table>
+     
+      <h3>BibTeX</h3>
+     <pre><tt>@inproceedings{lee2021looking,
+  	title={Looking into Your Speech: Learning Cross-modal Affinity for Audio-visual Speech Separation},
+  	author={Lee, Jiyoung and Chung, Soo-Whan and Kim, Sunok and Kang, Hong-Goo and Sohn, Kwanghoon},
+  	booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  	year={2021}
+	}</tt></pre>
+      
+    </div>
