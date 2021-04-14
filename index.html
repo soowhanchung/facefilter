@@ -19,7 +19,7 @@
     <div class="container">
       <div class="header">
         <div style="font-size: 10px">
-        <h1> <center> FaceFilter: Audio-visual Speech Separation using still image</center> </h1>
+        <h1> <center> FaceFilter: Audio-visual Speech Separation using still images</center> </h1>
         <h4 style="color: #517CB9; font-size: 30px"> 
 		<center> 
 			<a href="http://www.interspeech2020.org/"> <img src="./INTERSPEECH_2020_logo.png" style="max-width:80%"></a> 
@@ -53,8 +53,7 @@
       	<div class="row"><h3>Network Configuration</h3>
 		<p style="text-align: justify;">
 		<img src="./fig_block.png" style="max-width:100%;" align="center">
-		Description of the proposed audio-visual speech separation network. \textcolor{blue}{Blue} blocks are trainable neural networks whereas the \textcolor{red}{red} blocks are networks pre-trained in cross-modal biometric task.
-		It consists of three sub-stages such as speech/image encoding stage, audio-visual fusion stage, and speech separation stage.
+In this paper, we replace the speaker identity vector with cross-modal identity embeddings extracted from face images instead of that from pre-enrolled speakers’ voices. Without having a speaker preenrollment step, we can retrieve speaker identity from a profile image in the inference stage, even for unseen speaker’s voice. The network structure that we use is similar to the one proposed in <a href="https://www.robots.ox.ac.uk/~vgg/demo/theconversation/">[11]</a>, but with a few changes. Description of the proposed audio-visual speech separation network. Blue blocks are trainable neural networks whereas the red blocks are networks pre-trained in cross-modal biometric task. It consists of three sub-stages such as speech/image encoding stage, audio-visual fusion stage, and speech separation stage.
 		<br><br>
         <br>
 	</p>
