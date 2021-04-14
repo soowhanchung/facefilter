@@ -36,22 +36,18 @@
       	<h3>Authors</h3>
       	<div style="font-size: 16px">
       	<ul>
-		<li><a href="https://easy00.github.io">Jiyoung Lee</a><span style="text-transform:uppercase">&#10034;</span>, <i>Yonsei University</i></li>
-		<li><a href="https://soowhanchung.github.io/">Soo-Whan Chung</a><span style="text-transform:uppercase">&#10034;</span>, <i>Yonsei University, Naver Corporation</i></li>
-		<li>Sunok Kim, <i>Korea Aerospace University</i></li>
-		<li><a href="http://dsp.yonsei.ac.kr/">Hong-Goo Kang</a><span style="text-transform:uppercase">&#9841;</span>, <i>Yonsei University</i></li>
-		<li><a href="https://diml.yonsei.ac.kr/">Kwanghoon Sohn</a><span style="text-transform:uppercase">&#9841;</span>, <i>Yonsei University</i></li>
+		<li><a href="https://soowhanchung.github.io/">Soo-Whan Chung</a>, <i>Yonsei University, Naver Corporation</i></li>
+		<li>Joon Son Chung, <i>Naver Corporation</i></li>
+		<li><a href="http://dsp.yonsei.ac.kr/">Hong-Goo Kang</a>, <i>Yonsei University</i></li>
       	</ul>
       	</div>
-      	<p style="text-align: justify;">&#10034; equal contribution</p>
-      	<p style="text-align: justify;">&#9841; co-corresponding authors</p>    
 
       	</div>
 
       	<div class="row"><h3>Abstract</h3>
 		<img src="./fig1_main.png" style="max-width:100%;padding-right:20px;" align="center">
 		<p style="text-align: justify;">
-		In this paper, we address the problem of separating individual speech signals from videos using audio-visual neural processing. Most conventional approaches utilize frame-wise matching criteria to extract shared information between co-occurring audio and video. Thus, their performance heavily depends on the accuracy of audio-visual synchronization and the effectiveness of their representations. To overcome the frame discontinuity problem between two modalities due to transmission delay mismatch or jitter, we propose a cross-modal affinity network (CaffNet) that learns global correspondence as well as locally-varying affinities between audio and visual streams. Given that the global term provides stability over a temporal sequence at the utterance-level, this resolves the label permutation problem characterized by inconsistent assignments. By extending the proposed cross-modal affinity on the complex network, we further improve the separation performance in the complex spectral domain. Experimental results verify that the proposed methods outperform conventional ones on various datasets, demonstrating their advantages in real-world scenarios.
+		The objective of this paper is to separate a target speaker's speech from a mixture of two speakers using a deep audio-visual speech separation network. Unlike previous works that used lip movement on video clips or pre-enrolled speaker information as an auxiliary conditional feature, we use a single face image of the target speaker. In this task, the conditional feature is obtained from facial appearance in cross-modal biometric task, where audio and visual identity representations are shared in latent space. Learnt identities from facial images enforce the network to isolate matched speakers and extract the voices from mixed speech. It solves the permutation problem caused by swapped channel outputs, frequently occurred in speech separation tasks. The proposed method is far more practical than video-based speech separation since user profile images are readily available on many platforms. Also, unlike speaker-aware separation methods, it is applicable on separation with unseen speakers who have never been enrolled before. We show strong qualitative and quantitative results on challenging real-world examples.
 		</p>  
       	</div>
       	<div class="row"><h3>Network Configuration</h3>
